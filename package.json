@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Realtime-Game/Uno-Game/issues"
   },
-  "homepage": "https://github.com/Realtime-Game/Uno-Game#readme"
+  "homepage": "https://github.com/Realtime-Game/Uno-Game#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
