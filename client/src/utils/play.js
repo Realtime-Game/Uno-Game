@@ -32,33 +32,26 @@ export function playCard(tableCards, userCards) {
   
   export function showCard(tableCards, card) {
     if (!tableCards.length) return true;
-    if (tableCards.length) {
-      const color = tableCards[0].card.color;
-      const value = tableCards[0].card.value;
-      switch (value) {
-        case "Skip":
-          return false;
-        case "Reverse":
-          return false;
-        case "Draw":
-          if (card.value === value||card.value ==="Draw4") {
-            return true;
-          } else {
-            return false;
-          }
-        case "Draw4":
-          if (card.value === value) {
-              return true;
-            } else {
-              return false;
-            }
-        default:
-          if (card.value === value||card.color ===color||card.value==="Wild"||card.value==="Draw4") {
-              return true;
-            } else {
-              return false;
-            }
-      }
+
+    const color = tableCards[0].color;
+    const value = tableCards[0].value;
+  
+    switch (value) {
+      case "Skip":
+        return false;
+      case "Reverse":
+        return false;
+      case "Draw":
+        return card.value === value || card.value === "Draw4";
+      case "Draw4":
+        return card.value === value;
+      default:
+        return (
+          card.value === value ||
+          card.color === color ||
+          card.value === "Wild" ||
+          card.value === "Draw4"
+        );
     }
   }
   

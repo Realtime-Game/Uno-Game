@@ -6,6 +6,7 @@ import { socket } from "../context/socketProvider";
 function Home() {
   const { userName, setUserName, room, setRoom, users, setUsers } =
     useGameContext();
+
   const joinRoom = () => {
     if (userName && room) {
       socket.emit("join-room", { room, userName });
@@ -17,6 +18,7 @@ function Home() {
       setUsers(data);
     });
   }, [socket]);
+  
   return (
     <>
       <div className="flex flex-row">

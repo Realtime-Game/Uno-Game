@@ -37,6 +37,7 @@ io.on("connection", (socket) => {
   socket.on("distribute-card", (data) => {
     console.log("cards", data);
   });
+  
   socket.on("place-down", (data) => {
     console.log(data);
     io.to(data.room).emit("show-card", data);
