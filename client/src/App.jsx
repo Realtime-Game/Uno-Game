@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="dark">
       <BrowserRouter>
-      <Header/>
+      {/* <Header/> */}
       <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/uno" element={<Board/>} />
