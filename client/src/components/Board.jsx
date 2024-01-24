@@ -6,15 +6,12 @@ import Table from "./Table";
 import { socket } from "../context/socketProvider";
 import landingPageImage from "../assets/bgR.png";
 
-// ...
-
 <div className="relative flex items-center justify-center">
   <img
     src={landingPageImage}
     alt="Background GIF"
     className="w-screen h-screen object-cover"
   />
-  {/* ... */}
 </div>;
 
 const Board = () => {
@@ -42,7 +39,7 @@ const Board = () => {
             <h1 className="text-4xl font-bold mb-6 text-yellow-300">
               Welcome on Board {user && user.userName}
             </h1>
-            <p>
+            <p className="text-gray-50 italic">
               Players:{" "}
               {users?.map(
                 (user, idx) => (idx !== 0 ? ", " : "") + user.userName
@@ -50,18 +47,18 @@ const Board = () => {
             </p>
             {users.length &&
               users.map((user) => (
-                <h3 key={user.userName} className="text-lg font-semibold">
+                <h3 key={user.userName} className="text-gray-50">
                   {user.userName}
                 </h3>
               ))}
             <button
-              className="btn btn-primary text-2xl bg-red-400 rounded-none mb-3"
+              className="btn btn-error italic"
               onClick={handleUserCards}
             >
               Distribute Cards
             </button>
 
-            <Table className="bg-red-500" />
+            <Table/>
           </div>
         </div>
         <Chat />
