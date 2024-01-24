@@ -10,14 +10,20 @@ export const ContextProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [userName, setUserName] = useState("");
   const [room, setRoom] = useState("");
+  const [isPlayer1Turn, setIsPlayer1Turn] = useState(true);
 
-  console.log(totalCards, "tt", tableCards);
   const handleCards = () => {
     setTotalCards(shuffleCards(cards));
   };
+
+  const changeTurn = () => {
+    setIsPlayer1Turn((prevTurn) => !prevTurn);
+  };
+
   useEffect(() => {
     handleCards();
   }, []);
+
   return (
     <GameContext.Provider
       value={{
@@ -31,10 +37,13 @@ export const ContextProvider = ({ children }) => {
         setTableCards,
         users,
         setUsers,
+        isPlayer1Turn,
+        changeTurn,
       }}
     >
       {children}
     </GameContext.Provider>
   );
 };
+
 export const useGameContext = () => useContext(GameContext);
