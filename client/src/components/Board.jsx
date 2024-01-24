@@ -52,7 +52,7 @@ const Board = () => {
                 </h3>
               ))}
             <button
-              className="btn btn-error italic"
+              className="btn btn-error  bg-gradient-to-r hover:from-red-500 hover:to-yellow-500 italic"
               onClick={handleUserCards}
             >
               Distribute Cards
