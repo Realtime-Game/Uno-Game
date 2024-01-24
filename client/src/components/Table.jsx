@@ -14,14 +14,12 @@ function Table() {
   console.log(cardFace);
   return (
     <>
-    <div className="bg-white">
-
       {cardFace ? (
           <div>
           <h3>{cardFace && cardFace.userName}</h3>
           <img
             className="transition w-40 h-50  cursor-pointer"
-            src={"./assets/" + cardFace.card.url}
+            src={"../src/assets/" + cardFace.card.url}
             alt={cardFace.card.url}
             />
         </div>
@@ -30,7 +28,6 @@ function Table() {
           <h3>Waiting for user</h3>
         </div>
       )}
-      </div>
     </>
   );
 }

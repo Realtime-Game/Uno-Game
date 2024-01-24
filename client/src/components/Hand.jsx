@@ -50,7 +50,7 @@ const Hand = ({ userCards, setUserCards }) => {
             >
               <img
                 className="transition w-30 h-40 hover:scale-110 cursor-pointer"
-                src={"./assets/" + card.url}
+                src={"../src/assets/" + card.url}
                 alt={card.url}
               />
             </div>
