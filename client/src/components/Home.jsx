@@ -4,7 +4,7 @@ import { useGameContext } from "../context/ContextProvider";
 import { socket } from "../context/socketProvider";
 
 function Home() {
-  const { userName, setUserName, room, setRoom, users, setUsers } =
+  const { userName, setUserName, room, setRoom, setUsers } =
     useGameContext();
 
   const joinRoom = () => {

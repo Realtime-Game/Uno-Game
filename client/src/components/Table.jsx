@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { socket } from "../context/socketProvider";
 import { useGameContext } from "../context/ContextProvider";
 function Table({className}) {
-  const [cardFace, setCardFace] = useState(null);
+  const [cardFace, setCardFace] = useState();
   const {tableCards,setTableCards} = useGameContext()
   useEffect(() => {
     socket.on("show-card", (data) => {
@@ -11,7 +11,6 @@ function Table({className}) {
       setTableCards([data,...tableCards])
     });
   }, [socket]);
-  console.log(cardFace);
   return (
     <>
       {cardFace ? (

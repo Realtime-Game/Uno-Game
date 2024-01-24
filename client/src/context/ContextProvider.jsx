@@ -37,8 +37,7 @@ export const ContextProvider = ({ children }) => {
         setTableCards,
         users,
         setUsers,
-        isPlayer1Turn,
-        changeTurn,
+        isPlayer1Turn
       }}
     >
       {children}
