@@ -8,8 +8,11 @@ export default {
     extend: {
       fontFamily:{
         mono: ['Roboto Mono', 'monospace'],
+      },
+      backgroundImage: {
+        'main-board': "url('./assets/bgR.png')",
       }
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }

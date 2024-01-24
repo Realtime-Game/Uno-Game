@@ -52,7 +52,6 @@ const Chat = () => {
     //     </div>
 
     //   })}
-    // </div>
     <div className="p-4 fixed bottom-0 left-0 w-full max-w-md">
       <div className="flex items-center mb-4">
         <input

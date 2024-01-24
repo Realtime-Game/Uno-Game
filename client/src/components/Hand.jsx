@@ -38,7 +38,7 @@ const Hand = ({ userCards, setUserCards }) => {
     }
   }, [tableCards, userCards]);
   return (
-    <div className="flex flex-wrap">
+    <div className="flex">
       {userCards &&
         userCards.map((card, i) => {
           return (

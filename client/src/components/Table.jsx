@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { socket } from "../context/socketProvider";
 import { useGameContext } from "../context/ContextProvider";
-function Table() {
+function Table({className}) {
   const [cardFace, setCardFace] = useState(null);
   const {tableCards,setTableCards} = useGameContext()
   useEffect(() => {
@@ -15,7 +15,7 @@ function Table() {
   return (
     <>
       {cardFace ? (
-          <div>
+          <div className={`flex flex-col items-center ${className}`}>
           <h3>{cardFace && cardFace.userName}</h3>
           <img
             className="transition w-40 h-50  cursor-pointer"
@@ -25,7 +25,6 @@ function Table() {
         </div>
       ) : (
           <div>
-          <h3>Waiting for user</h3>
         </div>
       )}
     </>

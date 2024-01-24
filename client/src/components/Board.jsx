@@ -6,15 +6,12 @@ import Table from "./Table";
 import { socket } from "../context/socketProvider";
 import landingPageImage from "../assets/bgR.png";
 
-// ...
-
 <div className="relative flex items-center justify-center">
   <img
     src={landingPageImage}
     alt="Background GIF"
     className="w-screen h-screen object-cover"
   />
-  {/* ... */}
 </div>;
 
 const Board = () => {
@@ -35,43 +32,41 @@ const Board = () => {
   }, [users]);
 
   return (
-    <div className="w-full h-full flex items-center justify-center bg-green-800 text-white">
-      <div className="relative flex items-center justify-center">
-        <img
-          src={landingPageImage}
-          alt="Background GIF"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-          {}
-          <h1 className="text-4xl font-bold mb-6 text-yellow-300">
-            Welcome on Board {user && user.userName}
-          </h1>
-          <button
-            className="btn btn-primary text-2xl bg-red-400 rounded-md mb-6"
-            onClick={handleUserCards}
-          >
-            Distribute Cards
-          </button>
-        </div>
-      </div>
-      
-      <Table />
-      <Chat />
+    <>
+      <div className="w-screen h-screen bg-main-board bg-cover bg-center">
+        <div className="relative flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold mb-6 text-yellow-300">
+              Welcome on Board {user && user.userName}
+            </h1>
+            <p className="text-gray-50 italic">
+              Players:{" "}
+              {users?.map(
+                (user, idx) => (idx !== 0 ? ", " : "") + user.userName
+              )}
+            </p>
+            {users.length &&
+              users.map((user) => (
+                <h3 key={user.userName} className="text-gray-50">
+                  {user.userName}
+                </h3>
+              ))}
+            <button
+              className="btn btn-error  bg-gradient-to-r hover:from-red-500 hover:to-yellow-500 italic"
+              onClick={handleUserCards}
+            >
+              Distribute Cards
+            </button>
 
-      <div className="flex flex-col items-center space-y-4 mb-6">
-        {users.length > 0 &&
-          users.map((user) => (
-            <h3 key={user.userName} className="text-lg font-semibold">
-              {user.userName}
-            </h3>
-          ))}
-      </div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2">
+            <Table/>
+          </div>
+        </div>
+        <Chat />
+        <div className="fixed bottom-0 right-0 p-4">
         <Hand userCards={userCards} setUserCards={setUserCards} />
       </div>
-
-    </div>
+      </div>
+    </>
   );
 };
 
