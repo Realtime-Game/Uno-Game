@@ -85,7 +85,6 @@ const Board = () => {
             {users.length &&
               users.map((user) => (
                 <h3 key={user.userName} className="text-gray-50">
-                  {user.userName}
                 </h3>
               ))}
             <button
@@ -98,13 +97,10 @@ const Board = () => {
             <Table/>
           </div>
         </div>
-        {/* {ini toogle} */}
         <div className="fixed top-0 left-0 p-10">
         {toogle?<Chat />:null}
-        {/* <button onClick={()=>setToogle(!toogle)}>CHAT^</button>
-         */}
           <button onClick={() => setToogle(!toogle)}
-          className="bg-red-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded">Chat</button>
+          className=" btn btn-error bg-gradient-to-r hover:from-red-500 hover:to-yellow-500 italic text-black font-bold py-2 px-4 rounded">Chat</button>
         </div>
 
         <div className="fixed bottom-0 right-0 p-4">
