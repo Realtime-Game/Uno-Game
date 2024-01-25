@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useGameContext } from "../context/ContextProvider";
 import { socket } from "../context/socketProvider";
-
 function Home() {
   const { userName, setUserName, room, setRoom, setUsers } =
     useGameContext();
@@ -21,7 +20,7 @@ function Home() {
 
   return (
     <>
-      <div className="bg-[url('src/assets/Landing-Page.gif')] bg-cover">
+      <div className="bg-gif bg-cover">
         <div className="flex justify-center items-center h-[100vh]">
           <div className="flex flex-col justify-center items-center w-[350px] h-[300px] bg-gradient-to-r from-red-400 to-blue-500 hover:from-red-500 hover:to-yellow-500 shadow-xl rounded-xl gap-2 font-mono">
             <label htmlFor="" className="text-slate-950 italic font-extrabold">Name </label>
