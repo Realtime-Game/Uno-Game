@@ -1,3 +1,3 @@
 import io from "socket.io-client";
 
-export const socket = io.connect("http://localhost:5252");
+export const socket = io.connect("https://api-uno-game.casablancass.online");
