@@ -11,7 +11,8 @@ export default {
       },
       backgroundImage: {
         'main-board': "url('./assets/bgR.png')",
-      }
+        'gif': "url('/src/assets/Landing-Page.gif')",
+      },
     },
   },
   plugins: [require("daisyui")],
