@@ -35,6 +35,9 @@ const Chat = () => {
       setMessageReceive([...messageReceive, data]);
     });
   });
+
+  /**tooglebutton */
+
   return (
     // <div className="bg-black">
     //   <input
@@ -52,10 +55,40 @@ const Chat = () => {
     //     </div>
 
     //   })}
+    // <div className="p-4 fixed bottom-0 left-0 w-full max-w-md">
+    //   <div className="flex items-center mb-4">
+    //     <input
+    //       className="border border-white p-2 flex-grow text-black"
+    //       value={message}
+    //       onChange={(e) => setMessage(e.target.value)}
+    //       onKeyPress={(e) => keypressHandler(e)}
+    //       placeholder="Type your message..."
+    //     />
+    //     <button
+    //       className="bg-blue-500 text-black p-2 ml-2 rounded"
+    //       onClick={() => sendMessage()}
+    //     >
+    //       Send Message
+    //     </button>
+    //   </div>
+    //   <h1 className="text-xl font-bold text-white mb-2">Message:</h1>
+    //   <div className="overflow-y-auto max-h-60 bg-white">
+    //     {messageReceive.map((mess, index) => {
+    //       console.log(mess);
+    //       return (
+    //         <div key={index} className="mb-2">
+    //           <h4 className="font-extrabold text-slate-900">{mess.userName}</h4>
+    //           <p className="text-black break-words">{mess.message}</p>
+    //         </div>
+    //       );
+    //     })}
+    //   </div>
+    // </div>
+
     <div className="p-4 fixed bottom-0 left-0 w-full max-w-md">
       <div className="flex items-center mb-4">
         <input
-          className="border border-white p-2 flex-grow text-black"
+          className="border border-white p-2 flex-grow text-white"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyPress={(e) => keypressHandler(e)}
@@ -68,6 +101,7 @@ const Chat = () => {
           Send Message
         </button>
       </div>
+
       <h1 className="text-xl font-bold text-white mb-2">Message:</h1>
       <div className="overflow-y-auto max-h-60 bg-white">
         {messageReceive.map((mess, index) => {
