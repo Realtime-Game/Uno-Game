@@ -95,7 +95,7 @@ const Chat = () => {
           placeholder="Type your message..."
         />
         <button
-          className="bg-blue-500 text-black p-2 ml-2 rounded"
+          className="btn btn-error bg-gradient-to-r hover:from-red-500 hover:to-yellow-500 italic text-black font-bold  p-2 ml-2 rounded"
           onClick={() => sendMessage()}
         >
           Send Message
